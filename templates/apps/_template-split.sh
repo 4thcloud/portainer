@@ -1,5 +1,5 @@
 #!/bin/bash
-csplit --digits=3 --prefix=module templates.json "/^                },/+1" {*}
+csplit --digits=3 --prefix=module container.json "/^                },/+1" {*}
 cat module000 | tail -n +4 > aaTmp && mv aaTmp module000
 lastmod=module$(($(ls module* | wc -l) - 1)) && \
 cat $lastmod | head -n -2 > aaTmp && mv aaTmp $lastmod
